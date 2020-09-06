@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DevHome\\Desktop\\asp.net\\ecommerce\\ecomm\\API\\API.csproj": {}
+    "C:\\Users\\DevHome\\Desktop\\cosc495\\Section4&5-SemesterProject\\ecomm\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DevHome\\Desktop\\asp.net\\ecommerce\\ecomm\\API\\API.csproj": {
+    "C:\\Users\\DevHome\\Desktop\\cosc495\\Section4&5-SemesterProject\\ecomm\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DevHome\\Desktop\\asp.net\\ecommerce\\ecomm\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\DevHome\\Desktop\\cosc495\\Section4&5-SemesterProject\\ecomm\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\DevHome\\Desktop\\asp.net\\ecommerce\\ecomm\\API\\API.csproj",
+        "projectPath": "C:\\Users\\DevHome\\Desktop\\cosc495\\Section4&5-SemesterProject\\ecomm\\API\\API.csproj",
         "packagesPath": "C:\\Users\\DevHome\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DevHome\\Desktop\\asp.net\\ecommerce\\ecomm\\API\\obj\\",
+        "outputPath": "C:\\Users\\DevHome\\Desktop\\cosc495\\Section4&5-SemesterProject\\ecomm\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -41,6 +41,20 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -59,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

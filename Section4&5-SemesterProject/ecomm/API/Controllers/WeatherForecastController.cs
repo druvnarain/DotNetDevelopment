@@ -7,8 +7,9 @@ using Microsoft.Extensions.Logging;
 
 namespace API.Controllers
 {
+    //Attributes gives features and abilities
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]")] //specifies how client sends request to controller. [controller] is placeholder for method name
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -23,6 +24,7 @@ namespace API.Controllers
             _logger = logger;
         }
 
+        //runs this when receiving a get request
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

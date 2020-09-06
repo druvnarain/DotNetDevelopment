@@ -1,0 +1,16 @@
+.NET CLI
+----------------
+
+dotnet -help
+dotnet new -h			#See help section for "new"
+dotnet new webapi -h		#See help section for creating new webapi
+
+dotnet sln add <path2project.csproj>		# Add a proj. to sln file
+dotnet sln <path2solution.sln> add <path2project.csproj>  #Use when mult. sln files
+dotnet sln remove <path-to-project.csproj>	#Remove proj. from sln
+
+.NET
+----------------
+Solution Files (.sln) - tracks dependencies between projects, environment uses info in it to find and load the name-value parameters for the persisted data and the project VSPackages it references
+
+.csproj Files - 
