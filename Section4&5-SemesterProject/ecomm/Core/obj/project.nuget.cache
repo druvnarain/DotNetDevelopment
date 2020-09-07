@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "9T85LwAiaWdwPLTZTGTciUYGSEIuIZXIrDK2DKREju5oXe4aMjKiRBySCY5iU7T3yGCtFfhHPPYi2Sa70CSvqw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\DevHome\\Desktop\\cosc495\\Section4&5-SemesterProject\\ecomm\\Core\\Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DevHome\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\DevHome\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

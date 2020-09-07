@@ -1,4 +1,4 @@
-namespace API.Entities
+namespace Core.Entities
 {
     //Must use pascal convention in order for ORM framework to work properly
     //When using scaffolding, uses attributes to create columns

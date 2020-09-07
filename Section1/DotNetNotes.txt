@@ -9,8 +9,46 @@ dotnet sln add <path2project.csproj>		# Add a proj. to sln file
 dotnet sln <path2solution.sln> add <path2project.csproj>  #Use when mult. sln files
 dotnet sln remove <path-to-project.csproj>	#Remove proj. from sln
 
+dotnet dev-certs https		#check for HTTPS certs for app, present by default but not
+				not trusted by OS 
+
+dotnet run			#navigate to app directory, executes Program.cs's main method
+				#also looks in launchSettings.json
+dotnet watch run		#starts app, restarts if changes made to file (saved)
+
+dotnet --info			#use to find what version of SDK you're using
+
+dotnet restore			# restore dependencies
+
+dotnet tool install --global dotnet-ef --version 3.1.401
+dotnet tool update --global dotnet-ef --version 3.1.7
+
 .NET
 ----------------
 Solution Files (.sln) - tracks dependencies between projects, environment uses info in it to find and load the name-value parameters for the persisted data and the project VSPackages it references
 
 .csproj Files - 
+
+
+
+Entity (Object Relational Mapper
+----------------
+Context represents a session with DB
+DbContext uses repository pattern, specifies connection string
+need to install with nuget package manager
+must be added in Startup.cs -> ConfigureServices ->             services.AddDbContext<StoreContext>(x => x.UseSqlite(_configuration.GetConnectionString("DefaultConnection")))
+dotnet tool install --global dotnet-ef --version 3.1.401
+
+
+Migrations
+----------------
+uses code to generate database 
+Microsoft.EntityFrameworkCore.Design
+dotnet ef migrations add InitialCreate -o Database/Migrations
+dotnet ef database update		#generate database .db
+
+
+Asynchronous
+----------------
+Methods that are not asynchronous take up threads when performing a query, bad for scaling when dealing with multiple requests
+Passes task to delegates, frees up thread
