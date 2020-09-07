@@ -1,3 +1,4 @@
+using System.Reflection;
 using Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +18,15 @@ namespace Infrastructure.Database
         public DbSet<ProductBrand> ProductBrands { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
 
+        //Method responsible for creating migration (entity to table)
+        protected override void OnModelCreating(ModelBuilder modelBuilder) 
+        {
+            //From DbContext class (base)
+            base.OnModelCreating(modelBuilder);
+
+            //Applies configurations in Configurations Folder
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        }
 
     }
 }
