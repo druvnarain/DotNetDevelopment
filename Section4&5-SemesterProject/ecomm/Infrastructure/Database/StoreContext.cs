@@ -14,6 +14,9 @@ namespace Infrastructure.Database
 
         //Represents a table in the database. When scaffolding, usings attribute name for table name
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductBrand> ProductBrands { get; set; }
+        public DbSet<ProductType> ProductTypes { get; set; }
+
 
     }
 }
