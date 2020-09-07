@@ -1,0 +1,30 @@
+
+
+Presentation/UI/View
+	- Dependent on Application and Infrastructure layers
+	- Implements CQRS (Command Query Responsibility Segregation: each use cases represented by single command or query)
+
+Application Layer
+	- Dependent on Domain Layer, nothing else
+	- Application contains business logic (shared within this system) and types
+
+Domain Layer
+	- Entities, enums, exceptions, interfaces, types
+	- Domain contains enterprise logic (shared across many systems) and types
+	- Should not be dependent on data access and other infrastructure (use interfaces)
+
+Infrastructure/Data Access
+	- Contains classes for accessing external resources such as services and database.
+	- Implements interfaces based on interfaces defined in Application LAyer
+
+Note: "Core" is often a combination of Domain and Application Layers
+Note: Presentation Layer is often WebAPI/WebUI project
+
+Repository Pattern
+	- Increases testability by separating business logic from data access
+	- Reduces duplicate queries in controllers
+	- May make it harder to optimize queries (use Specification Pattern)
+	- Controllers inject IRepository
+	- Repository uses DbContext
+
+Specification Pattern

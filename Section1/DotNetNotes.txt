@@ -23,6 +23,8 @@ dotnet restore			# restore dependencies
 dotnet tool install --global dotnet-ef --version 3.1.401
 dotnet tool update --global dotnet-ef --version 3.1.7
 
+dotnet add reference <project-location>		#add project as dependency in another project
+
 .NET
 ----------------
 Solution Files (.sln) - tracks dependencies between projects, environment uses info in it to find and load the name-value parameters for the persisted data and the project VSPackages it references
@@ -52,3 +54,11 @@ Asynchronous
 ----------------
 Methods that are not asynchronous take up threads when performing a query, bad for scaling when dealing with multiple requests
 Passes task to delegates, frees up thread
+
+
+Services
+----------------
+Transient - short lifetime, only instantiated during method, not during HTTP request
+Scoped - creating for each session/HTTP request. Destroyed when request finishes
+Singleton - created first time used, never destroyed until app shuts down
+
