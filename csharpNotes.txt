@@ -1,0 +1,41 @@
+.NET Framework
+	- Platoform for building various applications on windows, inbuilt functionalities in form of class/library/APIs, supports OOP
+	-CLR (Common Language Runtime): gets built by own compiler, converted into Intermediate Language, then JIT (Just In Time) converts it to native code when targeted by CLR for execution environment (memory/thread management)
+	-CLS (Common Language Specification): inter language compatible
+	- Managed code: runs inside CLR, manages garbage collection, uses CAS and CTS
+	- Unmanagedcode: Doesn't depend on CLR for execution, independent of .Net
+	- ASP.NET (Active Server Pages): uses CLR, server side tech to build web 	services/sites/apps
+
+State Management
+	- Client-Side: Storing the information in the Page or Client’s System. They are 	reusable, simple objects.
+	- Server Side: Storing the information on the Server. It is easier to maintain the 	information on the Server rather than depending on the client for preserving the 	state.
+
+Assembly
+	- Collection of Exe and DLLs, units required to build app and deploy 
+
+Exe is an executable file. This runs the application for which it is designed. An Exe is generated when we build an application. Hence, the assemblies are loaded directly when we run an Exe. However, an Exe cannot be shared with the other applications.
+
+DLL stands for Dynamic Link Library. It is a library that consists of code that needs to be hidden. An application can consist of many DLLs. These can be shared with the other applications as well.
+
+Model Validation
+
+
+
+C# 
+
+namespace
+	- organizes large code projects, using directive
+	- using
+using directive
+	- Using static type, access static members without having to qualify access
+		-ex) using static System.Console;
+	- Using alias directive, Create an alias for a namespace or type
+		-ex) using Project = PC.MyCompany.Project;
+	
+Delegates
+	- Function like pointers in C/C++ (holds reference to methods)
+
+Reflection
+	- Ability for code to access metadata during runtime (like its data type, comments)
+
+	

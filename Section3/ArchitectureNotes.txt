@@ -28,3 +28,15 @@ Repository Pattern
 	- Repository uses DbContext
 
 Specification Pattern
+
+
+Model View Controller (MVC)
+	- Model
+		- Corresponds to data related logic
+		- Ex) Person class with fields, Data transfer objects (DTOs)
+	- View
+		- UI of the application (text, buttons, menus, etc)
+		- Ex) razor pages, React, Angular
+	- Controller
+		- Interface between Model and View
+		- Process/route requests, renders views

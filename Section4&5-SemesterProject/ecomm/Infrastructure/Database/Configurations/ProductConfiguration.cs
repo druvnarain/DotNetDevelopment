@@ -1,5 +1,6 @@
 using Core.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Database.Configurations
 {
@@ -8,7 +9,7 @@ namespace Infrastructure.Database.Configurations
     //must be referenced in StoreContext.cs
     public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
-        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Product> builder)
+        public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.Property(prop => prop.Id).IsRequired();
             builder.Property(prop => prop.Name).IsRequired().HasMaxLength(100);

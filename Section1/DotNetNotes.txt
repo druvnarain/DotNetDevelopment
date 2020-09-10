@@ -46,8 +46,15 @@ Migrations
 ----------------
 uses code to generate database 
 Microsoft.EntityFrameworkCore.Design
-dotnet ef migrations add InitialCreate -o Database/Migrations
+dotnet ef migrations add InitialCreate -o Database/Migrations   #generates migration files
+
+
+dotnet ef migrations add InitialCreate -p Infrastructure -s API -o Database/Migrations #generates files in Infra...with starter project API
+
 dotnet ef database update		#generate database .db
+dotnet ef database drop -p Infrastructure -s API/	#removes database in Infrastructure 							with starter project API
+dotnet ef migrations remove -p Infrastructure -s API	#removes migration files in Infra...
+
 
 
 Asynchronous
