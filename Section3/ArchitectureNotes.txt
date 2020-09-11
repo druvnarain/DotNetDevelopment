@@ -28,6 +28,7 @@ Repository Pattern
 	- Repository uses DbContext
 
 Specification Pattern
+	- Goes along with generic repositories
 
 
 Model View Controller (MVC)
