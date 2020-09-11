@@ -2,12 +2,13 @@ namespace Core.Entities
 {
     //Must use pascal convention in order for ORM framework to work properly
     //When using scaffolding, uses attributes to create columns
+    //Has to match database table name
     public class Product : BaseEntity
     {
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
-        public string PicUrl { get; set; }
+        public string PictureUrl { get; set; }
 
         //Also Establishes a realationship with ProductType/Brand Tables
         public ProductType ProductType { get; set; }

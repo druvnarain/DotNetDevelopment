@@ -35,6 +35,7 @@ namespace API
 
                     //Apply any pending migrations to the database and creates database if it doesnt exist
                     await context.Database.MigrateAsync();
+                    await StoreContextSeed.SeedAsync(context, loggerFactory);
                 }
                 catch (Exception ex)
                 {

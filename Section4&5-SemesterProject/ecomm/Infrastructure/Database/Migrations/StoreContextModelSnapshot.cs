@@ -31,7 +31,7 @@ namespace Infrastructure.Database.Migrations
                         .HasColumnType("TEXT")
                         .HasMaxLength(100);
 
-                    b.Property<string>("PicUrl")
+                    b.Property<string>("PictureUrl")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

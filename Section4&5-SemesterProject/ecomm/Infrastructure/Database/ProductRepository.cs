@@ -15,14 +15,32 @@ namespace Infrastructure.Database
             _context = context;
         }
 
+        public async Task<IReadOnlyList<ProductBrand>> GetProductBrandsAsync()
+        {
+            return await _context.ProductBrands.ToListAsync();
+        }
+
         public async Task<Product> GetProductByIdAsync(int id)
         {
-            return await _context.Products.FindAsync(id);
+            //Builds query first with includes, then executes FindAsync
+            return await _context.Products
+                .Include(prop => prop.ProductType)
+                .Include(prop => prop.ProductBrand)
+                //.FindAsync(id);     Find doesnt accept IQueryable from Included(). 
+                .SingleOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Products
+                .Include(prop => prop.ProductType)
+                .Include(prop => prop.ProductBrand)
+                .ToListAsync();
+        }
+
+        public async Task<IReadOnlyList<ProductType>> GetProductTypesAsync()
+        {
+            return await _context.ProductTypes.ToListAsync();
         }
     }
 }

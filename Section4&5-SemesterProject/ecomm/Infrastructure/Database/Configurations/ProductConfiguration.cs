@@ -15,7 +15,7 @@ namespace Infrastructure.Database.Configurations
             builder.Property(prop => prop.Name).IsRequired().HasMaxLength(100);
             builder.Property(prop => prop.Description).IsRequired().HasMaxLength(100);
             builder.Property(prop => prop.Price).HasColumnType("decimal(18,2)");
-            builder.Property(prop => prop.PicUrl).IsRequired();
+            builder.Property(prop => prop.PictureUrl).IsRequired();
             //Reads product has one brand, brand has many products
             builder.HasOne(brand => brand.ProductBrand).WithMany()
                 .HasForeignKey(prop => prop.ProductBrandId);
