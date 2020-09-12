@@ -29,6 +29,8 @@ Repository Pattern
 
 Specification Pattern
 	- Goes along with generic repositories
+	- Describes a query in an object
+	- in C# returns IQueryable<T>
 
 
 Model View Controller (MVC)
@@ -41,3 +43,8 @@ Model View Controller (MVC)
 	- Controller
 		- Interface between Model and View
 		- Process/route requests, renders views
+
+
+Data Transfer Objects (DTO)
+	-Shapes data into format that is acceptable for client view
+	-container class for moving data between layers
