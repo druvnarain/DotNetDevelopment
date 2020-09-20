@@ -1,0 +1,16 @@
+Used to install packages in projects. Package Manager functions in Visual Studio to manage nuget packages.
+	- Always restore project after installing package (dotnet restore)
+
+Used alongside dotnet in CLI
+	1. Enter command: dotnet add package <package-name>
+	2. In .csproj file add package reference: 
+		<ItemGroup>
+		  <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+		</ItemGroup>
+	3. In .cs file add: using <package-name>
+	
+
+Popular Nuget packages:
+	- EntityFrameworkCore
+	- Automapper
+	- Swashbuckler.AspNetCore.SwaggerGen / SwaggerUI

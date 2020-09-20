@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nrBwR/M8AJXYArKooSFMIfERRBOmqLpA6HBWWITa2gNqt7bzupxyNMgu4Hzin60qRLDupJhZNvJwmz1A85upsw==",
+  "dgSpecHash": "WlsGPc0d4yjTfZWHjW06w7mXkixkS3PZsexMvnhPbavZHCYqdwCYOPxkjblVpzDtt+vpHBL2f3qzSF03xqxFPw==",
   "success": true,
   "projectFilePath": "C:\\Users\\DevHome\\Desktop\\cosc495\\Section4&5-SemesterProject\\ecomm\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -30,10 +30,14 @@
     "C:\\Users\\DevHome\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.7\\microsoft.extensions.logging.abstractions.3.1.7.nupkg.sha512",
     "C:\\Users\\DevHome\\.nuget\\packages\\microsoft.extensions.options\\3.1.7\\microsoft.extensions.options.3.1.7.nupkg.sha512",
     "C:\\Users\\DevHome\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.7\\microsoft.extensions.primitives.3.1.7.nupkg.sha512",
+    "C:\\Users\\DevHome\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\DevHome\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.2\\sqlitepclraw.bundle_e_sqlite3.2.0.2.nupkg.sha512",
     "C:\\Users\\DevHome\\.nuget\\packages\\sqlitepclraw.core\\2.0.2\\sqlitepclraw.core.2.0.2.nupkg.sha512",
     "C:\\Users\\DevHome\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.2\\sqlitepclraw.lib.e_sqlite3.2.0.2.nupkg.sha512",
     "C:\\Users\\DevHome\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.2\\sqlitepclraw.provider.dynamic_cdecl.2.0.2.nupkg.sha512",
+    "C:\\Users\\DevHome\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.1\\swashbuckle.aspnetcore.swagger.5.6.1.nupkg.sha512",
+    "C:\\Users\\DevHome\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.1\\swashbuckle.aspnetcore.swaggergen.5.6.1.nupkg.sha512",
+    "C:\\Users\\DevHome\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.1\\swashbuckle.aspnetcore.swaggerui.5.6.1.nupkg.sha512",
     "C:\\Users\\DevHome\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\DevHome\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\DevHome\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",

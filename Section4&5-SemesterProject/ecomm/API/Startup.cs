@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Errors;
+using API.Extensions;
 using API.Helpers;
+using API.Middleware;
 using AutoMapper;
 using Core.Interfaces;
 using Infrastructure.Database;
@@ -15,6 +18,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 
 namespace API
 {
@@ -35,12 +39,41 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            /* Moved to ApplicationServicesExtension
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
+            */
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => 
                 x.UseSqlite(_configuration.GetConnectionString("DefaultConnection")));
+            services.AddApplicationServices();
+            services.AddSwaggerDocumentation();
+            /* Moved to ApplicationServicesExtension
+            //used to configure [ApiController] attributed used in controllers
+            services.Configure<ApiBehaviorOptions>(options => 
+            {
+                options.InvalidModelStateResponseFactory = actionContext =>
+                {
+                    var errors = actionContext.ModelState
+                        .Where(e => e.Value.Errors.Count > 0)
+                        .SelectMany(x => x.Value.Errors)
+                        .Select(x => x.ErrorMessage).ToArray();
+
+                    var errorResponse = new ApiValidationErrorResponse
+                    {
+                        Errors = errors
+                    };
+
+                    return new BadRequestObjectResult(errorResponse);
+                };
+            });
+               Added to SwaggerExtention*/
+            // services.AddSwaggerGen(configure =>
+            // {
+            //     //name must match SwaggerEndpoint url in Configure
+            //     configure.SwaggerDoc("v1", new OpenApiInfo {Title = "EComm API", Version = "Version1"});
+            // });
         }
 
 
@@ -48,10 +81,16 @@ namespace API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            /* Replaced by ExceptionMiddleware.cs
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
+            } */
+
+            app.UseMiddleware<ExceptionMiddleware>();
+
+            //used for 404 errors, redirects to ErrorController
+            app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
             //if https is available, use it if regular http is entered
             app.UseHttpsRedirection();
@@ -64,6 +103,10 @@ namespace API
 
             app.UseAuthorization();
 
+            // Moved to SwaggerServiceExtension UseSwaggerDocumentation method
+            // app.UseSwagger();
+            // app.UseSwaggerUI(configuration => {configuration.SwaggerEndpoint("/swagger/v1/swagger.json", "EComm API v1");});
+            app.UseSwaggerDocumentation();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
