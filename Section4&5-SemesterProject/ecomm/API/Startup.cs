@@ -59,6 +59,9 @@ namespace API
             //gets us tp controller, routing functionality
             app.UseRouting();
 
+            //get api to server static files (pics) in wwwroot
+            app.UseStaticFiles();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
