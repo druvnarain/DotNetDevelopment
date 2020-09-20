@@ -14,7 +14,10 @@ namespace API.Helpers
                 .ForMember(destinationDto => destinationDto.ProductBrand, 
                     forDtoMember => forDtoMember.MapFrom(sourceEntity => sourceEntity.ProductBrand.Name))
                 .ForMember(destinationDto => destinationDto.ProductType, 
-                    forDtoMember => forDtoMember.MapFrom(sourceEntity => sourceEntity.ProductType.Name));
+                    forDtoMember => forDtoMember.MapFrom(sourceEntity => sourceEntity.ProductType.Name))
+                .ForMember(destinationDto => destinationDto.PictureUrl,
+                    forDtoMember => forDtoMember.MapFrom<ProductUrlResolver>());
+                
         }
     }
 }
