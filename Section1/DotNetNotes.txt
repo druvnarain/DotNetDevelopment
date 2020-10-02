@@ -69,3 +69,6 @@ Transient - short lifetime, only instantiated during method, not during HTTP req
 Scoped - creating for each session/HTTP request. Destroyed when request finishes
 Singleton - created first time used, never destroyed until app shuts down
 
+
+Navigation Properties:
+Eager vs Lazy Loading

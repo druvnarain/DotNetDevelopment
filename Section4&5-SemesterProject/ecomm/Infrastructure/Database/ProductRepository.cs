@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Infrastructure.Database
 {
     //Interface found in Core/Interfaces
+    //replaced by genericrepository
     public class ProductRepository : IProductRepository
     {
         private readonly StoreContext _context;

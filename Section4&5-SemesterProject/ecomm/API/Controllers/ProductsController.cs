@@ -11,6 +11,7 @@ using API.Dtos;
 using AutoMapper;
 using API.Errors;
 using Microsoft.AspNetCore.Http;
+using API.Helpers;
 
 //note: controllers are created by each session
 namespace API.Controllers
@@ -67,15 +68,31 @@ namespace API.Controllers
             }).ToList();
         } */
 
+        // Replaced with new class for parameters
+        // [HttpGet]
+        // public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts(string sort,
+        // int? brandId, int? typeId)
+        // {
+        //     var spec = new ProductsWithTypesAndBrandsSpecification(sort, brandId, typeId);
+        //     var products = await _productsRepo.ListAsync(spec);
+        //     return Ok(_mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products));
+        // }
+
+        //Since we replaced the native data types with an object, controller cant tell from query string how
+        //it fits in object. Use [FromQuery]
+        //Note changed Task...<IReadOnlyList<ProductToReturnDto>>> to Task...<Pagination<ProductToReturnDto>>> 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts()
+        public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts(
+            [FromQuery]ProductSpecParams productParams)
         {
-            //Generic ListAllAsync inherits Product type from _productsRepo
-            //var products = await _productsRepo.ListAllAsync();
-            var spec = new ProductsWithTypesAndBrandsSpecification();
+            var spec = new ProductsWithTypesAndBrandsSpecification(productParams);
+            var countSpec = new ProductWithFiltersForCountSpecification(productParams);
+            var totalItems = await _productsRepo.CountAsync(countSpec);
             var products = await _productsRepo.ListAsync(spec);
-            return Ok(_mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products));
+            var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
+            return Ok(new Pagination<ProductToReturnDto>(productParams.PageIndex, productParams.PageSize, totalItems, data));
         }
+
 
         /* Before Dto
         https://localhost:5001/api/products/2 would return this

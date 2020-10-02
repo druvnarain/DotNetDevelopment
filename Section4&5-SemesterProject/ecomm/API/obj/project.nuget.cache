@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WlsGPc0d4yjTfZWHjW06w7mXkixkS3PZsexMvnhPbavZHCYqdwCYOPxkjblVpzDtt+vpHBL2f3qzSF03xqxFPw==",
+  "dgSpecHash": "glNflRSE3ZMQAQ2WjM9j2SWK/SGpUpGbnh0rtAyGgnObMT+6MKRfJx/21sdyPwNC1jduDWZL5O1UKFTiZ+BavA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DevHome\\Desktop\\cosc495\\Section4&5-SemesterProject\\ecomm\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\DevHome\\Desktop\\cosc495\\Section4&5-SemesterProject\\ecomm\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DevHome\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\DevHome\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",

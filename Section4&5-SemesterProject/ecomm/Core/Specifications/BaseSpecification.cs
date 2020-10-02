@@ -21,25 +21,38 @@ namespace Core.Specifications
         public List<Expression<Func<T, object>>> Includes {get; } = 
             new List<Expression<Func<T, object>>>();
 
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
+        public Expression<Func<T, object>> OrderBy {get; private set;}
 
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        public Expression<Func<T, object>> OrderByDescending {get; private set;}
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+        public int Take {get; private set;}
+
+        public int Skip {get; private set;}
+
+        public bool IsPagingEnabled {get; private set;}
+
 
         //For taking care of the .Includes(...) in ProductRepository
         protected void AddInclude(Expression<Func<T, object>> includeExpression)
         {
             Includes.Add(includeExpression);
+        }
+
+        protected void AddOrderBy(Expression<Func<T, object>> orderByExpression)
+        {
+            OrderBy = orderByExpression;
+        }
+
+        protected void AddOrderByDescending(Expression<Func<T, object>> orderByDescExpression)
+        {
+            OrderByDescending = orderByDescExpression;
+        }
+
+        protected void ApplyPaging(int skip, int take)
+        {
+            Skip = skip;
+            Take = take;
+            IsPagingEnabled = true;
         }
     }
 }
