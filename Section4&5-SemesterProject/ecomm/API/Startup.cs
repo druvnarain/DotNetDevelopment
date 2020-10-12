@@ -49,6 +49,14 @@ namespace API
                 x.UseSqlite(_configuration.GetConnectionString("DefaultConnection")));
             services.AddApplicationServices();
             services.AddSwaggerDocumentation();
+            services.AddCors(option => 
+            {
+                option.AddPolicy("CorsPolicy", policy =>
+                {
+                     policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+                });
+               
+            });
             /* Moved to ApplicationServicesExtension
             //used to configure [ApiController] attributed used in controllers
             services.Configure<ApiBehaviorOptions>(options => 
@@ -101,6 +109,8 @@ namespace API
             //get api to server static files (pics) in wwwroot
             app.UseStaticFiles();
 
+            app.UseCors("CorsPolicy");
+            
             app.UseAuthorization();
 
             // Moved to SwaggerServiceExtension UseSwaggerDocumentation method
