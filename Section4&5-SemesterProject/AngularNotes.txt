@@ -1,5 +1,7 @@
 Requirements: npm, nvm, node
 
+Observables are equivalent of Fetch/Promises
+
 For nvm
 https://medium.com/@Joachim8675309/installing-node-js-with-nvm-4dc469c977d9
 
@@ -28,3 +30,13 @@ ng serve			-- Builds/runs angular project
 To add Bootstrap:
 https://valor-software.com/ngx-bootstrap/#/documentation#getting-started
 ng add ngx-bootstrap
+
+To add font-awesome
+npm install font-awesome
+go to angular.json and add
+"styles": [
+              ...
+              ...
+              "./node_modules/font-awesome/css/font-awesome.min.css",
+              ...
+            ],
