@@ -25,11 +25,10 @@ namespace Infrastructure.Database
             //From DbContext class (base)
             base.OnModelCreating(modelBuilder);
 
-            //Applies configurations in Configurations Folder
+            //Applies configurations (ex. ProductConfigurations.cs) in Configurations Folder
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-            //Sqlite has trouble converting sql decimal to double sometimes, ensure its conversion with the following
-            if(Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
+            if(Database.ProviderName == "Microsoft.EntityFramework.Sqlite")
             {
                 foreach(var entityType in modelBuilder.Model.GetEntityTypes())
                 {

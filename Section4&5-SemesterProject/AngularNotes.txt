@@ -1,0 +1,30 @@
+Requirements: npm, nvm, node
+
+For nvm
+https://medium.com/@Joachim8675309/installing-node-js-with-nvm-4dc469c977d9
+
+To get app to use HTTPS/SSL:
+- Get .crt and .key certificate files
+- Place in folder in angular app
+- Go to Angular.json, find "serve" key
+- in "options" under "serve" add the sslKey/Cert, enable true
+"serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "client:build",
+            "sslKey": "SSL/server.key",
+            "sslCert": "SSL/server.crt",
+            "ssl": true
+          },
+
+Angular CLI
+https://cli.angular.io/
+
+npm install -g @angular/cli	-- Installs angular globablly on machine
+ng new my-dream-app		-- Creates angular project called my-dream-app
+cd my-dream-app
+ng serve			-- Builds/runs angular project
+
+To add Bootstrap:
+https://valor-software.com/ngx-bootstrap/#/documentation#getting-started
+ng add ngx-bootstrap
