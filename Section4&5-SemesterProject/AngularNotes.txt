@@ -26,6 +26,10 @@ npm install -g @angular/cli	-- Installs angular globablly on machine
 ng new my-dream-app		-- Creates angular project called my-dream-app
 cd my-dream-app
 ng serve			-- Builds/runs angular project
+ng g				-- lists schematics to create
+ng g c --help			-- list help for creating component
+ng g c nav-bar --skip-tests	-- creates a component, want to do in src folder, skip tests
+
 
 To add Bootstrap:
 https://valor-software.com/ngx-bootstrap/#/documentation#getting-started
@@ -40,3 +44,7 @@ go to angular.json and add
               "./node_modules/font-awesome/css/font-awesome.min.css",
               ...
             ],
+
+
+Components:
+-Need to be declared in app.module.ts to be used throughout application
