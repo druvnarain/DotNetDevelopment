@@ -29,6 +29,7 @@ ng serve			-- Builds/runs angular project
 ng g				-- lists schematics to create
 ng g c --help			-- list help for creating component
 ng g c nav-bar --skip-tests	-- creates a component, want to do in src folder, skip tests
+ng g m shared			-- creates a module named shared(cd into folder first)
 
 
 To add Bootstrap:
@@ -48,3 +49,8 @@ go to angular.json and add
 
 Components:
 -Need to be declared in app.module.ts to be used throughout application
+
+Styling Guide: (All under App Module)
+- Core Module: Singletons (ex. NavBar)
+- Shared Module: Anything used in more than 1 feature module
+- Feature Module: Features that have its own module and routing
