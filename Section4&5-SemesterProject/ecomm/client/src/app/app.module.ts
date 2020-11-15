@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { ShopModule } from './shop/shop.module';
+import { HomeModule } from './home/home.module';
 
 // Modules loads components. at least one module required. @ngModule provides metadata, marks class as Angular class
 @NgModule({
@@ -18,7 +19,8 @@ import { ShopModule } from './shop/shop.module';
     BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,
-    ShopModule
+    // ShopModule,  removed for lazy loading (see app-routing.module)
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
